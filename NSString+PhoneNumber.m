@@ -23,13 +23,11 @@
 
 -(NSString *)nonHyphenString
 {
-    NSLog(@"ph:%@", self);
     NSString* string = self;
     string = [string stringByReplacingOccurrencesOfString:@"+81" withString:@"0"];
     string = [string stringByReplacingOccurrencesOfString:@"[^0-9]" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, string.length)];
     string = [string stringByReplacingOccurrencesOfString:@"-" withString:@""];
     string = [string stringByReplacingOccurrencesOfString:@" " withString:@""];
-    NSLog(@"ph:%@", string);
     return string;
 }
 
